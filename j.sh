@@ -1,8 +1,8 @@
 #!/bin/bash
 
-cd $HOME/Desktop/agile-testing-master/unit-tests/src 
+cd $HOME/Desktop/agile-testing-master/agile/unit-tests/src 
 
 javac -d ../bin/ test/*.java
-cd $HOME/Desktop/agile-testing-master/unit-tests/bin 
+cd $HOME/Desktop/agile-testing-master/agile/unit-tests/bin 
 
 java org.junit.runner.JUnitCore test.HeroTest
