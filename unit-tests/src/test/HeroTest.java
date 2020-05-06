@@ -21,28 +21,28 @@ public class HeroTest {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		System.out.println("Avant le démarrage");
+		System.out.println("Avant le démarrage Hero");
 	}
 
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
-		System.out.println("Après tous les tests");
+		System.out.println("Après tous les tests Hero");
 	}
 
 	@Before
 	public void setUp() throws Exception {
 		hero = new Hero("Jaina Portvaillant");
-		System.out.println("Avant un test");
+		System.out.println("Avant un test Hero");
 	}
 
 	@After
 	public void tearDown() throws Exception {
-		System.out.println("Après un test");
+		System.out.println("Après un test Hero");
 	}
 
 	@Test
 	public void testHeroLevelUp() throws Exception {
-		Hero hero = new Hero("Jaina Portvaillant");
+		Hero hero = new Hero("Jaina Portvaillant Hero");
 		hero.levelUp();
 		assertThat(hero, hasProperty("level", is(2)));
 	}
