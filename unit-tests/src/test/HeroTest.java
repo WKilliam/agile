@@ -38,13 +38,39 @@ public class HeroTest {
 
 	@Test
 	public void testHeroLevelUp() throws Exception {
-		// TODO
+		Hero hero = new Hero("Jaina Portvaillant");
+		hero.levelUp();
+		assertThat(hero, hasProperty("level", is(2)));
+		System.out.println("succes");
+	}
+
+	@Test
+	public void testTakeDamage() throws Exception {
+		hero = new Hero("Martin");
+		hero.takeDamage(5);
+		assertThat(hero,hasProperty(hp),is(15));
+	}
+
+	@Test
+	public void testAttack() throws Exception {
+		Enemy skt = new Enemy("Peter",1);
+		value=skt.getHp();
+		hero = new Hero("Martin");
+		hero.attack(skt);
+		assertGreater(value,skt.getHp());
 	}
 
 	@Test
 	public void testHeroProperties() throws Exception {
+		Hero hero = new Hero("Jaina Portvaillant");
 		assertThat(hero, hasProperty("name"));
         assertThat(hero, hasProperty("name", is("Jaina Portvaillant")));
+        assertThat(hero, hasProperty("level"));
+        assertThat(hero, hasProperty("level", is(1)));
+        assertThat(hero, hasProperty("hp"));
+        assertThat(hero, hasProperty("hp", is(20)));
+        assertThat(hero, hasProperty("atk"));
+        assertThat(hero, hasProperty("atk", is(2)));
 	}
 
 }
